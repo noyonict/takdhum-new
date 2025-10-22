@@ -22,9 +22,9 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.user.username)
-        super(Profile, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
-    def get_absulete_url(self):
+    def get_absolute_url(self):
         return reverse('user_profile', args=[str(self.slug)])
 
 

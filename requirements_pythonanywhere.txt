@@ -1,5 +1,7 @@
+# PythonAnywhere compatible requirements for Python 3.9
 Django==4.2.7
 django-crispy-forms==2.1
 django-filter==23.3
 Pillow==10.1.0
 pytz==2023.3
+mysqlclient==2.2.0

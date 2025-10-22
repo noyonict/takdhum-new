@@ -12,7 +12,8 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .forms import SignupForm, UserMessageForm, UserForm, ProfileForm, ContactForm, SubcriberForm
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes
+from django.utils.encoding import force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
@@ -73,7 +74,7 @@ class ProfilePage(generic.DetailView):
     template_name = 'takdhum/user_profile.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ProfilePage, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['info'] = Basic_info.objects.first()
         context['categories'] = CourseCategory.objects.all()
         return context
@@ -411,7 +412,7 @@ def signup(request):
             message = render_to_string('acc_active_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)).decode(),
+                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
                 'token':account_activation_token.make_token(user),
             })
             to_email = form.cleaned_data.get('email')
@@ -441,7 +442,7 @@ def signup(request):
 
 def activate(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
@@ -485,7 +486,7 @@ class EventListView(generic.ListView):
         return Event.objects.all().order_by('-upload_time')
 
     def get_context_data(self, **kwargs):
-        context = super(EventListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['info'] = Basic_info.objects.first()
         context['categories'] = CourseCategory.objects.all()
         return context
