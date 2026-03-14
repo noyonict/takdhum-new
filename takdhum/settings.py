@@ -32,8 +32,7 @@ SECRET_KEY = '=mr=m*i)*lhfxx63ddo9!w9aofbrt7$)_xp0#p1l_z4(xv$4++'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['www.takdhum.com', 'http://www.takdhum.com/', 'takdhum.com',]
-ALLoWED_HOSTS = []
+ALLOWED_HOSTS = ['www.takdhum.com', 'takdhum.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'crispy_bootstrap4',
     'django_filters',
 ]
 
@@ -146,7 +146,10 @@ MESSAGE_TAGS = {
     messages.DEBUG: 'alert alert-info',
 }
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGOUT_REDIRECT_URL = 'index'

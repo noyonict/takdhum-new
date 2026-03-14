@@ -1,5 +1,4 @@
 from django.urls import path, re_path
-from django.conf.urls import url
 from . import views
 
 urlpatterns = [
@@ -20,7 +19,7 @@ urlpatterns = [
     path('sign-up', views.signup, name='sign-up'),
     path('user-message', views.user_message, name='user_message'),
     # path('activate/<uidb64>/<token>', views.activate, name='activate'),
-    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
      views.activate, name='activate'),
     path('takdhum/profile/<slug:slug>/', views.ProfilePage.as_view(), name='user_profile'),
     path('update_profile/', views.update_profile, name='update_profile'),
