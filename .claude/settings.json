@@ -1,0 +1,53 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/noyon/Documents/Noyon/Projects/takdhum-new -maxdepth 3 \\\\\\(-name README* -o -name .cursorrules -o -name Makefile -o -name *.md \\\\\\))",
+      "Bash(find /home/noyon/Documents/Noyon/Projects/takdhum-new -maxdepth 2 -name *.json -o -name *.yaml -o -name *.yml -o -name *.ini -o -name *.cfg)",
+      "Bash(wc -l /home/noyon/Documents/Noyon/Projects/takdhum-new/web/templates/takdhum/html/*.html)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/consoles/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\" -d \"executable=bash&arguments=&working_directory=/home/romanahme\")",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/consoles/45758744/send_input/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\" -d 'input=cd ~/takdhum4 && git pull origin master\\\\n')",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/consoles/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/takdhum/settings.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/requirements.txt\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/takdhum/urls.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/webapps/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/web/tokens.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\" -F 'content=from django.contrib.auth.tokens import PasswordResetTokenGenerator:*)",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/web/views.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/web/views.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\" -F \"content=@/tmp/prod_views.py\")",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/takdhum/settings.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\" -F \"content=@/tmp/prod_settings.py\")",
+      "Bash(/tmp/prod_requirements.txt:*)",
+      "Bash(__NEW_LINE_31964b607d58a8af__ curl:*)",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/upgrade_log.txt\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/competition/models.py\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(__NEW_LINE_45b90fb90c4ffbe5__ grep:*)",
+      "Bash(curl -s -X POST \"https://www.pythonanywhere.com/api/v0/user/romanahme/webapps/www.takdhum.com/reload/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/backup_log.txt\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(__NEW_LINE_b748120af1b2cab4__ curl:*)",
+      "Bash(__NEW_LINE_b748120af1b2cab4__ ls:*)",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/var/log/www.takdhum.com.error.log\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/fix_log.txt\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/var/log/www.takdhum.com.server.log\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(python3 -m venv venv)",
+      "Bash(sudo apt:*)",
+      "Bash(pip3 install:*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m virtualenv venv)",
+      "Bash(venv/bin/pip install:*)",
+      "Bash(venv/bin/python manage.py migrate)",
+      "Bash(venv/bin/python -c \":*)",
+      "Bash(pkill -f \"manage.py runserver\")",
+      "Bash(venv/bin/python import_prod_db.py)",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/static/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")",
+      "Bash(curl -s \"https://www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/static/takdhum/\" -H \"Authorization: Token 0bfedf93bd6abe6512a8a9813d7c1d37ff24d220\")"
+    ],
+    "additionalDirectories": [
+      "/tmp",
+      "/home/noyon/Documents/Noyon/Projects/takdhum-new/https:/www.pythonanywhere.com/api/v0/user/romanahme/files/path/home/romanahme/takdhum4/competition"
+    ]
+  }
+}
