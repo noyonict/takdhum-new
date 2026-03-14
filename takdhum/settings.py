@@ -84,23 +84,24 @@ WSGI_APPLICATION = 'takdhum.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+# SQLite — local development only
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'romanahme$default',
-#         'USER': 'rohamahme',
-#         'PASSWORD': 'db@+Takdhum',
-#         'HOST': 'romanahme.mysql.pythonanywhere-services.com',
-#         'PORT': '',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'romanahme$takdhum4',
+        'USER': 'romanahme',
+        'PASSWORD': 'db@+Takdhum',
+        'HOST': 'romanahme.mysql.pythonanywhere-services.com',
+        'PORT': '',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -127,15 +128,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
+STATIC_ROOT = '/home/romanahme/takdhum4/static_cdn/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
 MEDIA_URL = '/media_cdn/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
-# MEDIA_ROOT = '/home/romanahme/takdhum/takdhum/media_cdn/'
+MEDIA_ROOT = '/home/romanahme/media_cdn/'
 
 
 MESSAGE_TAGS = {
