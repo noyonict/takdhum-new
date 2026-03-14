@@ -29,7 +29,7 @@ _MYSQL_PASSWORD = (
     _mysql_conf.get('client', 'password', fallback=None) or
     _mysql_conf.get('mysqldump', 'password', fallback=None) or
     _mysql_conf.get('mysql', 'password', fallback='')
-)
+).strip('"\'')  # ~/.my.cnf may store password with surrounding quotes
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
