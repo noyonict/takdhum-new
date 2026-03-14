@@ -21,9 +21,15 @@ import configparser
 from django.contrib.messages import constants as messages
 
 # Read MySQL password from ~/.my.cnf (PythonAnywhere stores credentials there)
+# Set TAKDHUM_DB_PASSWORD env var to override if ~/.my.cnf is unavailable.
 _mysql_conf = configparser.ConfigParser()
 _mysql_conf.read(os.path.expanduser('~/.my.cnf'))
-_MYSQL_PASSWORD = _mysql_conf.get('client', 'password', fallback='db@+Takdhum')
+_MYSQL_PASSWORD = (
+    os.environ.get('TAKDHUM_DB_PASSWORD') or
+    _mysql_conf.get('client', 'password', fallback=None) or
+    _mysql_conf.get('mysqldump', 'password', fallback=None) or
+    _mysql_conf.get('mysql', 'password', fallback='')
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
