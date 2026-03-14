@@ -17,7 +17,13 @@ EMAIL_PORT = 587
 
 
 import os
+import configparser
 from django.contrib.messages import constants as messages
+
+# Read MySQL password from ~/.my.cnf (PythonAnywhere stores credentials there)
+_mysql_conf = configparser.ConfigParser()
+_mysql_conf.read(os.path.expanduser('~/.my.cnf'))
+_MYSQL_PASSWORD = _mysql_conf.get('client', 'password', fallback='db@+Takdhum')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -97,7 +103,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'romanahme$takdhum4',
         'USER': 'romanahme',
-        'PASSWORD': 'db@+Takdhum',
+        'PASSWORD': _MYSQL_PASSWORD,
         'HOST': 'romanahme.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
