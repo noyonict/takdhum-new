@@ -5,7 +5,7 @@
 # Keeps backups for the last 7 days, then deletes older ones
 # =============================================================================
 
-BACKUP_DIR="/home/romanahme/takdhum/takdhum-new-django3.2/db_backups"
+BACKUP_DIR="/home/romanahme/db_backups"
 DB_NAME="romanahme\$takdhum4"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_FILE="$BACKUP_DIR/takdhum_backup_${TIMESTAMP}.sql.gz"
